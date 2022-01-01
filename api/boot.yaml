@@ -1,0 +1,25 @@
+---
+zero:
+    - name: demo-api                    # Required
+      port: 8888                        # Required
+      enabled: true                     # Required
+      tv:
+          enabled: true                   # Optional, default: false
+      prom:
+          enabled: true                   # Optional, default: false
+          pusher:
+              enabled: true                        # Enable backend job push metrics to remote pushgateway
+              jobName: "demo"                       # Name of current push job
+              remoteAddress: "localhost:9091"       # Remote address of pushgateway
+              intervalMs: 2000                      # Push interval in milliseconds
+      sw:
+          enabled: false                   # Optional, default: false
+      commonService:
+          enabled: true                   # Optional, default: false
+      interceptors:
+          loggingZap:
+              enabled: true                 # Optional, default: false
+          metricsProm:
+              enabled: true                 # Optional, default: false
+          meta:
+              enabled: true                 # Optional, default: false
