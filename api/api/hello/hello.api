@@ -1,0 +1,11 @@
+syntax = "v1"
+
+type SayReq {
+    Name string `json:"name"`
+}
+
+
+service demo-api {
+    @handler Say
+    post /demo/hello/say (SayReq) returns (Rsp)
+}

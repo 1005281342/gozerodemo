@@ -1,0 +1,8 @@
+syntax = "v1"
+
+type Rsp {
+    Result bool `json:"result, omitempty"`
+    Code int32 `json:"code, omitempty"`
+    Msg string `json:"msg, omitempty"`
+    Data interface{} `json:"data, omitempty"`
+}

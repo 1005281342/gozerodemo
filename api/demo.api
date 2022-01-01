@@ -1,0 +1,10 @@
+syntax = "v1"
+
+import (
+	"api/common.api"
+	"api/hello/hello.api"
+)
+
+info (
+	title: "go-zero demo API"
+)
