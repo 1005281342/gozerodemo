@@ -1,8 +1,8 @@
 # README
 
 ## RPC
-https://go-zero.dev/cn/goctl-rpc.html
 
+https://go-zero.dev/cn/goctl-rpc.html
 
 ## 更新API后生成代码
 
@@ -24,3 +24,12 @@ Content-Length: 23
 
 {"Message":"hello: me"} 
 ```
+
+## 监控
+
+参考[使用prometheus + grafana + pushgateway搭建监控可视化系统](https://juejin.cn/post/6844903848230944776)
+
+配置：以resCode为例
+rk_demo_api_resCode{exported_job="demo",instance="pushgateway:9091",job="prom-stack"}
+
+![](imgs/img.png)

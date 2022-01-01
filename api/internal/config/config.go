@@ -5,5 +5,6 @@ import (
 )
 
 type Config struct {
-	HelloRPC zrpc.RpcClientConf
+	HelloRPC  zrpc.RpcClientConf
+	Namespace string
 }

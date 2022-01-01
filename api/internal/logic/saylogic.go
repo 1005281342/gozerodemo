@@ -2,6 +2,7 @@ package logic
 
 import (
 	"context"
+	"github.com/1005281342/gozerodemo/api/internal/metrics"
 	"github.com/1005281342/gozerodemo/rpc/hello/hello"
 	"net/http"
 
@@ -28,6 +29,7 @@ func NewSayLogic(ctx context.Context, svcCtx *svc.ServiceContext) SayLogic {
 func (l *SayLogic) Say(req types.SayReq) (*types.Rsp, error) {
 	var rsp, err = l.svcCtx.HelloRPC.Say(l.ctx, &hello.SayReq{Name: req.Name})
 	if err != nil {
+		metrics.HelloFailed()
 		return nil, err
 	}
 

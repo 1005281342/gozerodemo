@@ -5,6 +5,7 @@ import (
 	"flag"
 	"github.com/1005281342/gozerodemo/api/internal/config"
 	"github.com/1005281342/gozerodemo/api/internal/handler"
+	"github.com/1005281342/gozerodemo/api/internal/metrics"
 	"github.com/1005281342/gozerodemo/api/internal/svc"
 	"github.com/rookie-ninja/rk-entry/entry"
 	"github.com/rookie-ninja/rk-zero/boot"
@@ -17,6 +18,8 @@ var (
 
 func main() {
 	flag.Parse()
+	var c config.Config
+	conf.MustLoad(*configFile, &c)
 
 	// Bootstrap basic entries from boot config.
 	rkentry.RegisterInternalEntriesFromConfig("./boot.yaml")
@@ -26,9 +29,7 @@ func main() {
 
 	// Get ZeroEntry
 	zeroEntry := res["demo-api"].(*rkzero.ZeroEntry)
-
-	var c config.Config
-	conf.MustLoad(*configFile, &c)
+	metrics.Init(c.Namespace, zeroEntry.PromEntry.Registerer)
 
 	ctx := svc.NewServiceContext(c)
 	handler.RegisterHandlers(zeroEntry.Server, ctx)
