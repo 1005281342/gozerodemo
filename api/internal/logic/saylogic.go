@@ -27,6 +27,7 @@ func NewSayLogic(ctx context.Context, svcCtx *svc.ServiceContext) SayLogic {
 }
 
 func (l *SayLogic) Say(req types.SayReq) (*types.Rsp, error) {
+	metrics.Hello()
 	var rsp, err = l.svcCtx.HelloRPC.Say(l.ctx, &hello.SayReq{Name: req.Name})
 	if err != nil {
 		metrics.HelloFailed()
