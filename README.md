@@ -33,6 +33,9 @@ Content-Length: 23
 
 ![](imgs/img.png)
 
-参考[一篇文章带你理解和使用Prometheus的指标](https://frezc.github.io/2019/08/03/prometheus-metrics/)
+参考
+[一篇文章带你理解和使用Prometheus的指标](https://frezc.github.io/2019/08/03/prometheus-metrics/)
+
+[容器监控实践—PromQL查询解析](https://segmentfault.com/a/1190000018372390)
 
 按分钟进行统计 `increase(rk_demo_api_resCode{exported_job="demo",instance="pushgateway:9091",job="prom-stack"}[1m])`
