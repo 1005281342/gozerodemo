@@ -11,3 +11,8 @@ type Rsp struct {
 type SayReq struct {
 	Name string `json:"name"`
 }
+
+type AddReq struct {
+	Name    string `json:"name"`
+	Payload string `json:"payload"`
+}

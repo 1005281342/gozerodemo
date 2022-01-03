@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package tasks;
+
+option go_package = "tasks";
+
+enum TaskType {
+  Push = 0;
+}
+
+message AddReq {
+  TaskType name = 1;
+  string payload = 2;
+}
+
+message AddRsp {
+  string uuid = 1;
+}
+
+service Tasks {
+  rpc Add(AddReq) returns(AddRsp);
+}

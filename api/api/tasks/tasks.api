@@ -1,0 +1,12 @@
+syntax = "v1"
+
+type AddReq {
+    Name string `json:"name"`
+    Payload string `json:"payload"`
+}
+
+
+service demo-api {
+    @handler Add
+    post /demo/tasks/add (AddReq) returns (Rsp)
+}

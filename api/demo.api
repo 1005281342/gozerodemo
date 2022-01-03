@@ -3,8 +3,9 @@ syntax = "v1"
 import (
 	"api/common.api"
 	"api/hello/hello.api"
+	"api/tasks/tasks.api"
 )
 
-info (
+info(
 	title: "go-zero demo API"
 )

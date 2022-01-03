@@ -19,4 +19,14 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 			},
 		},
 	)
+
+	server.AddRoutes(
+		[]rest.Route{
+			{
+				Method:  http.MethodPost,
+				Path:    "/demo/tasks/add",
+				Handler: AddHandler(serverCtx),
+			},
+		},
+	)
 }
