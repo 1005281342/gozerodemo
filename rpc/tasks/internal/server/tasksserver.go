@@ -25,3 +25,8 @@ func (s *TasksServer) Add(ctx context.Context, in *tasks.AddReq) (*tasks.AddRsp,
 	l := logic.NewAddLogic(ctx, s.svcCtx)
 	return l.Add(in)
 }
+
+func (s *TasksServer) Cancel(ctx context.Context, in *tasks.CancelReq) (*tasks.CancelRsp, error) {
+	l := logic.NewCancelLogic(ctx, s.svcCtx)
+	return l.Cancel(in)
+}

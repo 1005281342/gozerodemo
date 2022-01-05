@@ -34,6 +34,8 @@ func NewPushTask(payload string) (*asynq.Task, error) {
 	} else if p.At != 0 {
 		opt = append(opt, asynq.ProcessAt(time.Unix(p.At, 0)))
 	}
+	opt = append(opt, asynq.Queue(tasks.TaskType_Push.String()))
+
 	return asynq.NewTask(tasks.TaskType_Push.String(), []byte(payload), opt...), nil
 }
 

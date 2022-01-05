@@ -5,8 +5,15 @@ type AddReq {
     Payload string `json:"payload"`
 }
 
+type CancelReq {
+    Name string `json:"name"`
+    Uuid string `json:"uuid"`
+}
+
 
 service demo-api {
     @handler Add
     post /demo/tasks/add (AddReq) returns (Rsp)
+    @handler Cancel
+    post /demo/tasks/cancel (CancelReq) returns (Rsp)
 }

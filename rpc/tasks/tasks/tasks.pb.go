@@ -169,6 +169,99 @@ func (x *AddRsp) GetUuid() string {
 	return ""
 }
 
+type CancelReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Name TaskType `protobuf:"varint,1,opt,name=name,proto3,enum=tasks.TaskType" json:"name,omitempty"`
+	Uuid string   `protobuf:"bytes,2,opt,name=uuid,proto3" json:"uuid,omitempty"`
+}
+
+func (x *CancelReq) Reset() {
+	*x = CancelReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_tasks_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CancelReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CancelReq) ProtoMessage() {}
+
+func (x *CancelReq) ProtoReflect() protoreflect.Message {
+	mi := &file_tasks_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CancelReq.ProtoReflect.Descriptor instead.
+func (*CancelReq) Descriptor() ([]byte, []int) {
+	return file_tasks_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *CancelReq) GetName() TaskType {
+	if x != nil {
+		return x.Name
+	}
+	return TaskType_Push
+}
+
+func (x *CancelReq) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
+type CancelRsp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *CancelRsp) Reset() {
+	*x = CancelRsp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_tasks_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CancelRsp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CancelRsp) ProtoMessage() {}
+
+func (x *CancelRsp) ProtoReflect() protoreflect.Message {
+	mi := &file_tasks_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CancelRsp.ProtoReflect.Descriptor instead.
+func (*CancelRsp) Descriptor() ([]byte, []int) {
+	return file_tasks_proto_rawDescGZIP(), []int{3}
+}
+
 var File_tasks_proto protoreflect.FileDescriptor
 
 var file_tasks_proto_rawDesc = []byte{
@@ -179,12 +272,21 @@ var file_tasks_proto_rawDesc = []byte{
 	0x61, 0x6d, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x70, 0x61, 0x79, 0x6c, 0x6f, 0x61, 0x64, 0x18, 0x02,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x70, 0x61, 0x79, 0x6c, 0x6f, 0x61, 0x64, 0x22, 0x1c, 0x0a,
 	0x06, 0x41, 0x64, 0x64, 0x52, 0x73, 0x70, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69, 0x64, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x75, 0x75, 0x69, 0x64, 0x2a, 0x14, 0x0a, 0x08, 0x54,
-	0x61, 0x73, 0x6b, 0x54, 0x79, 0x70, 0x65, 0x12, 0x08, 0x0a, 0x04, 0x50, 0x75, 0x73, 0x68, 0x10,
-	0x00, 0x32, 0x2c, 0x0a, 0x05, 0x54, 0x61, 0x73, 0x6b, 0x73, 0x12, 0x23, 0x0a, 0x03, 0x41, 0x64,
-	0x64, 0x12, 0x0d, 0x2e, 0x74, 0x61, 0x73, 0x6b, 0x73, 0x2e, 0x41, 0x64, 0x64, 0x52, 0x65, 0x71,
-	0x1a, 0x0d, 0x2e, 0x74, 0x61, 0x73, 0x6b, 0x73, 0x2e, 0x41, 0x64, 0x64, 0x52, 0x73, 0x70, 0x42,
-	0x07, 0x5a, 0x05, 0x74, 0x61, 0x73, 0x6b, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x75, 0x75, 0x69, 0x64, 0x22, 0x44, 0x0a, 0x09, 0x43,
+	0x61, 0x6e, 0x63, 0x65, 0x6c, 0x52, 0x65, 0x71, 0x12, 0x23, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x0f, 0x2e, 0x74, 0x61, 0x73, 0x6b, 0x73, 0x2e, 0x54,
+	0x61, 0x73, 0x6b, 0x54, 0x79, 0x70, 0x65, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x12, 0x0a,
+	0x04, 0x75, 0x75, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x75, 0x75, 0x69,
+	0x64, 0x22, 0x0b, 0x0a, 0x09, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x52, 0x73, 0x70, 0x2a, 0x14,
+	0x0a, 0x08, 0x54, 0x61, 0x73, 0x6b, 0x54, 0x79, 0x70, 0x65, 0x12, 0x08, 0x0a, 0x04, 0x50, 0x75,
+	0x73, 0x68, 0x10, 0x00, 0x32, 0x5a, 0x0a, 0x05, 0x54, 0x61, 0x73, 0x6b, 0x73, 0x12, 0x23, 0x0a,
+	0x03, 0x41, 0x64, 0x64, 0x12, 0x0d, 0x2e, 0x74, 0x61, 0x73, 0x6b, 0x73, 0x2e, 0x41, 0x64, 0x64,
+	0x52, 0x65, 0x71, 0x1a, 0x0d, 0x2e, 0x74, 0x61, 0x73, 0x6b, 0x73, 0x2e, 0x41, 0x64, 0x64, 0x52,
+	0x73, 0x70, 0x12, 0x2c, 0x0a, 0x06, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x12, 0x10, 0x2e, 0x74,
+	0x61, 0x73, 0x6b, 0x73, 0x2e, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x52, 0x65, 0x71, 0x1a, 0x10,
+	0x2e, 0x74, 0x61, 0x73, 0x6b, 0x73, 0x2e, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x52, 0x73, 0x70,
+	0x42, 0x07, 0x5a, 0x05, 0x74, 0x61, 0x73, 0x6b, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x33,
 }
 
 var (
@@ -200,21 +302,26 @@ func file_tasks_proto_rawDescGZIP() []byte {
 }
 
 var file_tasks_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_tasks_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_tasks_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_tasks_proto_goTypes = []interface{}{
-	(TaskType)(0),  // 0: tasks.TaskType
-	(*AddReq)(nil), // 1: tasks.AddReq
-	(*AddRsp)(nil), // 2: tasks.AddRsp
+	(TaskType)(0),     // 0: tasks.TaskType
+	(*AddReq)(nil),    // 1: tasks.AddReq
+	(*AddRsp)(nil),    // 2: tasks.AddRsp
+	(*CancelReq)(nil), // 3: tasks.CancelReq
+	(*CancelRsp)(nil), // 4: tasks.CancelRsp
 }
 var file_tasks_proto_depIdxs = []int32{
 	0, // 0: tasks.AddReq.name:type_name -> tasks.TaskType
-	1, // 1: tasks.Tasks.Add:input_type -> tasks.AddReq
-	2, // 2: tasks.Tasks.Add:output_type -> tasks.AddRsp
-	2, // [2:3] is the sub-list for method output_type
-	1, // [1:2] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	0, // 1: tasks.CancelReq.name:type_name -> tasks.TaskType
+	1, // 2: tasks.Tasks.Add:input_type -> tasks.AddReq
+	3, // 3: tasks.Tasks.Cancel:input_type -> tasks.CancelReq
+	2, // 4: tasks.Tasks.Add:output_type -> tasks.AddRsp
+	4, // 5: tasks.Tasks.Cancel:output_type -> tasks.CancelRsp
+	4, // [4:6] is the sub-list for method output_type
+	2, // [2:4] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_tasks_proto_init() }
@@ -247,6 +354,30 @@ func file_tasks_proto_init() {
 				return nil
 			}
 		}
+		file_tasks_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CancelReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_tasks_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CancelRsp); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -254,7 +385,7 @@ func file_tasks_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_tasks_proto_rawDesc,
 			NumEnums:      1,
-			NumMessages:   2,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -282,6 +413,7 @@ const _ = grpc.SupportPackageIsVersion6
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type TasksClient interface {
 	Add(ctx context.Context, in *AddReq, opts ...grpc.CallOption) (*AddRsp, error)
+	Cancel(ctx context.Context, in *CancelReq, opts ...grpc.CallOption) (*CancelRsp, error)
 }
 
 type tasksClient struct {
@@ -301,9 +433,19 @@ func (c *tasksClient) Add(ctx context.Context, in *AddReq, opts ...grpc.CallOpti
 	return out, nil
 }
 
+func (c *tasksClient) Cancel(ctx context.Context, in *CancelReq, opts ...grpc.CallOption) (*CancelRsp, error) {
+	out := new(CancelRsp)
+	err := c.cc.Invoke(ctx, "/tasks.Tasks/Cancel", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TasksServer is the server API for Tasks service.
 type TasksServer interface {
 	Add(context.Context, *AddReq) (*AddRsp, error)
+	Cancel(context.Context, *CancelReq) (*CancelRsp, error)
 }
 
 // UnimplementedTasksServer can be embedded to have forward compatible implementations.
@@ -312,6 +454,9 @@ type UnimplementedTasksServer struct {
 
 func (*UnimplementedTasksServer) Add(context.Context, *AddReq) (*AddRsp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Add not implemented")
+}
+func (*UnimplementedTasksServer) Cancel(context.Context, *CancelReq) (*CancelRsp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Cancel not implemented")
 }
 
 func RegisterTasksServer(s *grpc.Server, srv TasksServer) {
@@ -336,6 +481,24 @@ func _Tasks_Add_Handler(srv interface{}, ctx context.Context, dec func(interface
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Tasks_Cancel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CancelReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TasksServer).Cancel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/tasks.Tasks/Cancel",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TasksServer).Cancel(ctx, req.(*CancelReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Tasks_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "tasks.Tasks",
 	HandlerType: (*TasksServer)(nil),
@@ -343,6 +506,10 @@ var _Tasks_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Add",
 			Handler:    _Tasks_Add_Handler,
+		},
+		{
+			MethodName: "Cancel",
+			Handler:    _Tasks_Cancel_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

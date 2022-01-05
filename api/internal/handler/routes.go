@@ -27,6 +27,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				Path:    "/demo/tasks/add",
 				Handler: AddHandler(serverCtx),
 			},
+			{
+				Method:  http.MethodPost,
+				Path:    "/demo/tasks/cancel",
+				Handler: CancelHandler(serverCtx),
+			},
 		},
 	)
 }

@@ -16,3 +16,8 @@ type AddReq struct {
 	Name    string `json:"name"`
 	Payload string `json:"payload"`
 }
+
+type CancelReq struct {
+	Name string `json:"name"`
+	Uuid string `json:"uuid"`
+}

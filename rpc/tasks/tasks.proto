@@ -17,6 +17,15 @@ message AddRsp {
   string uuid = 1;
 }
 
+message CancelReq {
+  TaskType name = 1;
+  string uuid = 2;
+}
+
+message CancelRsp {
+}
+
 service Tasks {
   rpc Add(AddReq) returns(AddRsp);
+  rpc Cancel(CancelReq) returns(CancelRsp);
 }
