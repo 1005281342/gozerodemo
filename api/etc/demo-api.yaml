@@ -1,13 +1,17 @@
+#Name: demo-api
+#Host: 0.0.0.0
+#Port: 8888
+
 HelloRPC:
     Etcd:
         Hosts:
-            - 127.0.0.1:2379
+            - 192.168.64.1:2379
         Key: hello.rpc
 
 TasksRPC:
     Etcd:
         Hosts:
-            - 127.0.0.1:2379
+            - 192.168.64.1:2379
         Key: tasks.rpc
 
 Namespace: "test"

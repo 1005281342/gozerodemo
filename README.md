@@ -45,4 +45,4 @@ Content-Length: 23
 
 https://github.com/hibiken/asynq
 
-docker run --rm --name asynqmon -p 8098:8080 -e REDIS_ADDR=172.17.0.1:6379 hibiken/asynqmon
+docker run --rm --name asynqmon -d -p 8098:8080 -e REDIS_ADDR=172.17.0.1:6379 hibiken/asynqmon

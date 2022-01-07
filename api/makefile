@@ -4,6 +4,9 @@ updateApi:
 ngrok:
 	ngrok http 8888
 
+buildlinux:
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build demo.go
+
 run:
 	go run main.go -f ./etc/demo-api.yaml
 
