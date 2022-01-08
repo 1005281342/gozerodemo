@@ -14,4 +14,10 @@ TasksRPC:
             - 192.168.64.1:2379
         Key: tasks.rpc
 
+JaegerRPC:
+    Etcd:
+        Hosts:
+            - 192.168.64.1:2379
+        Key: jaeger.rpc
+
 Namespace: "test"

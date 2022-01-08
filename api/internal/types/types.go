@@ -21,3 +21,8 @@ type CancelReq struct {
 	Name string `json:"name"`
 	Uuid string `json:"uuid"`
 }
+
+type Req struct {
+	Message string `json:"message"`
+	Cnt     int32  `json:"cnt"`
+}

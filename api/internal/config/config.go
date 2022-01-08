@@ -7,5 +7,6 @@ import (
 type Config struct {
 	HelloRPC  zrpc.RpcClientConf
 	TasksRPC  zrpc.RpcClientConf
+	JaegerRPC zrpc.RpcClientConf
 	Namespace string
 }

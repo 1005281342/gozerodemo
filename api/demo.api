@@ -4,6 +4,7 @@ import (
 	"api/common.api"
 	"api/hello/hello.api"
 	"api/tasks/tasks.api"
+	"api/jaeger/jaeger.api"
 )
 
 info(

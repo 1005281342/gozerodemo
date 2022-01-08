@@ -1,0 +1,11 @@
+syntax = "v1"
+
+type Req {
+    Message string `json:"message"`
+    Cnt int32 `json:"cnt"`
+}
+
+service demo-api {
+    @handler Node1
+    post /jaeger/node (Req) returns (Rsp)
+}

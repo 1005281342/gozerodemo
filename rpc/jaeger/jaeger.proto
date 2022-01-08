@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package jaeger;
+
+option go_package = "jaeger";
+
+message NodeReq {
+  string message = 1;
+  int32 cnt = 2;
+}
+
+message NodeRsp {
+  string message = 1;
+}
+
+service jaeger {
+  rpc Node1(NodeReq) returns(NodeRsp);
+  rpc Node2(NodeReq) returns(NodeRsp);
+  rpc Node3(NodeReq) returns(NodeRsp);
+}

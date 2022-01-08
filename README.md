@@ -46,3 +46,23 @@ Content-Length: 23
 https://github.com/hibiken/asynq
 
 docker run --rm --name asynqmon -d -p 8098:8080 -e REDIS_ADDR=172.17.0.1:6379 hibiken/asynqmon
+
+## 调用链
+
+```shell
+# 启动jaeger
+docker run -d --name jaeger \
+    -e COLLECTOR_ZIPKIN_HOST_PORT=:9411 \
+    -p 5775:5775/udp \
+    -p 6831:6831/udp \
+    -p 6832:6832/udp \
+    -p 5778:5778 \
+    -p 16686:16686 \
+    -p 14268:14268 \
+    -p 14250:14250 \
+    -p 9411:9411 \
+    jaegertracing/all-in-one:1.23
+```
+参考：https://rkdev.info/cn/docs/bootstrapper/user-guide/grpc-golang/basic/interceptor-tracing/
+
+![img.png](imgs/jaeger.png)
