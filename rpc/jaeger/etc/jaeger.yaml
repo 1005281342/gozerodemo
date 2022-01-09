@@ -1,13 +1,14 @@
 Name: jaeger.rpc
 ListenOn: 0.0.0.0:8077
 Etcd:
-  Hosts:
-  - 192.168.64.1:2379
-  Key: jaeger.rpc
+    Hosts:
+        - 127.0.0.1:2379
+    Key: jaeger.rpc
 
 
 HelloRPC:
-  Etcd:
-    Hosts:
-      - 192.168.64.1:2379
-    Key: hello.rpc
+    Etcd:
+        Hosts:
+            - 127.0.0.1:2379
+        Key: hello.rpc
+    Target: "127.0.0.1:8080"

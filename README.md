@@ -47,7 +47,7 @@ https://github.com/hibiken/asynq
 
 docker run --rm --name asynqmon -d -p 8098:8080 -e REDIS_ADDR=172.17.0.1:6379 hibiken/asynqmon
 
-## 调用链
+## 链路追踪
 
 ```shell
 # 启动jaeger
@@ -66,3 +66,16 @@ docker run -d --name jaeger \
 参考：https://rkdev.info/cn/docs/bootstrapper/user-guide/grpc-golang/basic/interceptor-tracing/
 
 ![img.png](imgs/jaeger.png)
+
+### 部署示例APP
+```shell
+
+docker run --rm -it \
+  --link jaeger \
+  -p 8080-8083:8080-8083 \
+  -e JAEGER_AGENT_HOST="jaeger" \
+  jaegertracing/example-hotrod:1.14 \
+  all
+```
+参考：https://blog.csdn.net/panjianlongWUHAN/article/details/113347757
+

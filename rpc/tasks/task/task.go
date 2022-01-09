@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	RedisAddr   = "192.168.64.1:6379"
+	RedisAddr   = "127.0.0.1:6379"
 	Concurrency = 16
 )
 

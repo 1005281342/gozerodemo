@@ -5,19 +5,22 @@
 HelloRPC:
     Etcd:
         Hosts:
-            - 192.168.64.1:2379
+            - 127.0.0.1:2379
         Key: hello.rpc
+    Target: "127.0.0.1:8080"
 
 TasksRPC:
     Etcd:
         Hosts:
-            - 192.168.64.1:2379
+            - 127.0.0.1:2379
         Key: tasks.rpc
+    Target: "127.0.0.1:8081"
 
 JaegerRPC:
     Etcd:
         Hosts:
-            - 192.168.64.1:2379
+            - 127.0.0.1:2379
         Key: jaeger.rpc
+    Target: "127.0.0.1:8077"
 
 Namespace: "test"

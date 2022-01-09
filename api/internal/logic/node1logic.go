@@ -26,6 +26,9 @@ func NewNode1Logic(ctx context.Context, svcCtx *svc.ServiceContext) Node1Logic {
 }
 
 func (l *Node1Logic) Node1(req types.Req) (*types.Rsp, error) {
+	var s = NewSayLogic(l.ctx, l.svcCtx)
+	s.Say(types.SayReq{Name: req.Message})
+
 	var rsp, err = l.svcCtx.JaegerRPC.Node1(l.ctx, &jaeger.NodeReq{Message: req.Message, Cnt: req.Cnt})
 	if err != nil {
 		return nil, err

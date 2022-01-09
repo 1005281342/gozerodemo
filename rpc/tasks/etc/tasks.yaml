@@ -2,5 +2,5 @@ Name: tasks.rpc
 ListenOn: 0.0.0.0:8081
 Etcd:
   Hosts:
-  - 192.168.64.1:2379
+  - 127.0.0.1:2379
   Key: tasks.rpc
