@@ -63,11 +63,13 @@ docker run -d --name jaeger \
     -p 9411:9411 \
     jaegertracing/all-in-one:1.23
 ```
+
 参考：https://rkdev.info/cn/docs/bootstrapper/user-guide/grpc-golang/basic/interceptor-tracing/
 
 ![img.png](imgs/jaeger.png)
 
 ### 部署示例APP
+
 ```shell
 
 docker run --rm -it \
@@ -77,5 +79,13 @@ docker run --rm -it \
   jaegertracing/example-hotrod:1.14 \
   all
 ```
+
 参考：https://blog.csdn.net/panjianlongWUHAN/article/details/113347757
 
+## gRPC测试工具
+
+工具地址：https://github.com/fullstorydev/grpcui
+
+参考：https://segmentfault.com/a/1190000020954443
+
+在rpc服务`hello`为例，在其配置中设置`Mode`为`test`或者`dev`并重启服务，然后执行`grpcui -plaintext localhost:8080`
