@@ -3,8 +3,8 @@ package logic
 import (
 	"context"
 	"errors"
-	"github.com/1005281342/gozerodemo/rpc/hello/hello"
 
+	"github.com/1005281342/gozerodemo/rpc/hello/hello"
 	"github.com/1005281342/gozerodemo/rpc/hello/internal/svc"
 
 	"github.com/tal-tech/go-zero/core/logx"
@@ -25,6 +25,7 @@ func NewSayLogic(ctx context.Context, svcCtx *svc.ServiceContext) *SayLogic {
 }
 
 func (l *SayLogic) Say(in *hello.SayReq) (*hello.SayRsp, error) {
+
 	if in.Name == "sb" {
 		return nil, errors.New("name illegal")
 	}

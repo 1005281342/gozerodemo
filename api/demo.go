@@ -28,7 +28,7 @@ func main() {
 	res := rkzero.RegisterZeroEntriesWithConfig("./boot.yaml")
 
 	// Get ZeroEntry
-	zeroEntry := res["demo-api"].(*rkzero.ZeroEntry)
+	zeroEntry := res["go-zero"].(*rkzero.ZeroEntry)
 	metrics.Init(c.Namespace, zeroEntry.PromEntry.Registerer)
 
 	ctx := svc.NewServiceContext(c)
