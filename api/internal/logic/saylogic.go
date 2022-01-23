@@ -4,10 +4,6 @@ import (
 	"context"
 	"github.com/1005281342/gozerodemo/api/internal/metrics"
 	"github.com/1005281342/gozerodemo/rpc/hello/hello"
-	rkmid "github.com/rookie-ninja/rk-entry/middleware"
-	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/propagation"
-	"go.opentelemetry.io/otel/trace"
 	"net/http"
 
 	"github.com/1005281342/gozerodemo/api/internal/svc"
@@ -31,9 +27,9 @@ func NewSayLogic(ctx context.Context, svcCtx *svc.ServiceContext) SayLogic {
 }
 
 func (l *SayLogic) Say(req types.SayReq) (*types.Rsp, error) {
-	// go-zero默认读global相关数据，因此在这里更新rk的trace到全局
-	otel.SetTracerProvider(l.ctx.Value(rkmid.TracerProviderKey).(trace.TracerProvider))
-	otel.SetTextMapPropagator(l.ctx.Value(rkmid.PropagatorKey).(propagation.TextMapPropagator))
+	//// go-zero默认读global相关数据，因此在这里更新rk的trace到全局
+	//otel.SetTracerProvider(l.ctx.Value(rkmid.TracerProviderKey).(trace.TracerProvider))
+	//otel.SetTextMapPropagator(l.ctx.Value(rkmid.PropagatorKey).(propagation.TextMapPropagator))
 
 	//var span trace.Span
 	//l.ctx, span = l.ctx.Value(rkmid.TracerKey).(trace.Tracer).Start(l.ctx, "Say")
