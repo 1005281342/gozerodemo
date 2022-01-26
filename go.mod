@@ -2,14 +2,14 @@ module github.com/1005281342/gozerodemo
 
 go 1.17
 
-replace github.com/rookie-ninja/rk-zero v0.0.0 => ./third_party/rk-zero
+//replace github.com/rookie-ninja/rk-zero v0.0.0 => ./third_party/rk-zero
 
 require (
 	github.com/hibiken/asynq v0.20.0
 	github.com/prometheus/client_golang v1.11.0
 	github.com/rookie-ninja/rk-entry v1.0.7
 	github.com/rookie-ninja/rk-prom v1.1.4
-	github.com/rookie-ninja/rk-zero v0.0.0
+	github.com/rookie-ninja/rk-zero v0.0.6
 	github.com/tal-tech/go-zero v1.2.4
 	google.golang.org/grpc v1.43.0
 	google.golang.org/protobuf v1.27.1

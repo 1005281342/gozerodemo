@@ -41,11 +41,17 @@ Content-Length: 23
 
 按分钟进行统计 `increase(rk_demo_api_resCode{exported_job="demo",instance="pushgateway:9091",job="prom-stack"}[1m])`
 
+grafana: http://127.0.0.1:3000/
+
+pushGateway: http://127.0.0.1:9091/
+
 ## 分布式任务队列
 
 https://github.com/hibiken/asynq
 
 docker run --rm --name asynqmon -d -p 8098:8080 -e REDIS_ADDR=172.17.0.1:6379 hibiken/asynqmon
+
+Web页面: http://127.0.0.1:8098/
 
 ## 链路追踪
 
@@ -67,6 +73,8 @@ docker run -d --name jaeger \
 参考：https://rkdev.info/cn/docs/bootstrapper/user-guide/grpc-golang/basic/interceptor-tracing/
 
 ![img.png](imgs/jaeger.png)
+
+Web页面: http://127.0.0.1:16686/
 
 ### 部署示例APP
 
