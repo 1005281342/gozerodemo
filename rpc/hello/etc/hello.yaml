@@ -5,3 +5,4 @@ Etcd:
   - 127.0.0.1:2379
   Key: hello.rpc
 Mode: test
+HttpPort: 18080
