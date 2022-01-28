@@ -97,3 +97,25 @@ docker run --rm -it \
 参考：https://segmentfault.com/a/1190000020954443
 
 在rpc服务`hello`为例，在其配置中设置`Mode`为`test`或者`dev`并重启服务，然后执行`grpcui -plaintext localhost:8080`
+
+
+## 接入北极星
+
+### 安装北极星（单机版）
+https://polarismesh.cn/zh/doc/%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/%E5%AE%89%E8%A3%85%E6%9C%8D%E5%8A%A1%E7%AB%AF/%E5%AE%89%E8%A3%85%E5%8D%95%E6%9C%BA%E7%89%88.html#%E5%8D%95%E6%9C%BA%E7%89%88%E5%AE%89%E8%A3%85
+
+### go-zero北极星服务发现能力支持
+https://github.com/zeromicro/zero-contrib/tree/main/zrpc/registry/polaris
+
+### 例子
+服务端注册示例见：rpc/jaeger/jaeger.go
+
+客户端调用示例见：rpc/jaeger/example/jaeger/main.go
+
+注意调用示例同目录下需要添加`polaris.yaml`文件，内容为：
+```yaml
+global:
+    serverConnector:
+        addresses:
+            - 127.0.0.1:8091
+```

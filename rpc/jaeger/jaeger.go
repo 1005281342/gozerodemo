@@ -12,6 +12,7 @@ import (
 	"github.com/tal-tech/go-zero/core/conf"
 	"github.com/tal-tech/go-zero/core/service"
 	"github.com/tal-tech/go-zero/zrpc"
+	"github.com/zeromicro/zero-contrib/zrpc/registry/polaris"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
@@ -34,6 +35,13 @@ func main() {
 		}
 	})
 	defer s.Stop()
+	// 注册服务
+	var err = polaris.RegitserService(polaris.NewPolarisConfig(c.ListenOn,
+		polaris.WithServiceName(c.Etcd.Key),
+		polaris.WithNamespace("default")))
+	if err != nil {
+		panic(err)
+	}
 
 	fmt.Printf("Starting rpc server at %s...\n", c.ListenOn)
 	s.Start()
