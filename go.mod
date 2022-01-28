@@ -27,6 +27,7 @@ require (
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 	github.com/fatih/color v1.9.0 // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
+	github.com/fullstorydev/grpchan v1.1.0 // indirect
 	github.com/go-git/go-billy/v5 v5.3.1 // indirect
 	github.com/go-logr/logr v1.2.1 // indirect
 	github.com/go-logr/stdr v1.2.0 // indirect
@@ -53,6 +54,7 @@ require (
 	github.com/hashicorp/golang-lru v0.5.4 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/hashicorp/serf v0.9.5 // indirect
+	github.com/jhump/protoreflect v1.5.0 // indirect
 	github.com/json-iterator/go v1.1.11 // indirect
 	github.com/juju/ratelimit v1.0.1 // indirect
 	github.com/justinas/alice v1.2.0 // indirect
