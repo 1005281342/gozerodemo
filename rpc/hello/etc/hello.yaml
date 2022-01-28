@@ -6,3 +6,9 @@ Etcd:
   Key: hello.rpc
 Mode: test
 HttpPort: 18080
+
+Telemetry:
+  Name: hello.rpc
+  Endpoint: http://127.0.0.1:14268/api/traces
+  Sampler: 1.0
+  Batcher: jaeger
