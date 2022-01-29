@@ -7,6 +7,7 @@ import (
 	"github.com/fullstorydev/grpchan"
 	"github.com/fullstorydev/grpchan/httpgrpc"
 	"github.com/tal-tech/go-zero/core/logx"
+	"github.com/zeromicro/zero-contrib/zrpc/registry/polaris"
 	"net"
 	"net/http"
 
@@ -55,6 +56,15 @@ func main() {
 		}
 	})
 	defer s.Stop()
+
+	// 注册服务
+	err = polaris.RegitserService(polaris.NewPolarisConfig(c.ListenOn,
+		polaris.WithServiceName(c.Etcd.Key),
+		polaris.WithNamespace("default"),
+		polaris.WithHeartbeatInervalSec(5)))
+	if err != nil {
+		panic(err)
+	}
 
 	fmt.Printf("Starting rpc server at %s...\n", c.ListenOn)
 	s.Start()

@@ -7,11 +7,11 @@ Etcd:
 
 
 HelloRPC:
-    Etcd:
-        Hosts:
-            - 127.0.0.1:2379
-        Key: hello.rpc
-    Target: "127.0.0.1:7070"
+#    Etcd:
+#        Hosts:
+#            - 127.0.0.1:2379
+#        Key: hello.rpc
+    Target: "polaris://127.0.0.1:8091/hello.rpc?wait=14s"
 
 Telemetry:
     Name: jaeger.rpc

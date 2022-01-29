@@ -13,5 +13,5 @@ func main() {
 		panic(err)
 	}
 	var cli = jaeger.NewJaegerClient(conn.Conn())
-	_, err = cli.Node1(context.Background(), &jaeger.NodeReq{Cnt: 1, Message: "polaris"})
+	_, err = cli.Node1(context.Background(), &jaeger.NodeReq{Cnt: 5, Message: "polaris"})
 }

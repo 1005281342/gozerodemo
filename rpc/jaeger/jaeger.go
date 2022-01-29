@@ -13,6 +13,7 @@ import (
 	"github.com/tal-tech/go-zero/core/service"
 	"github.com/tal-tech/go-zero/zrpc"
 	"github.com/zeromicro/zero-contrib/zrpc/registry/polaris"
+	_ "github.com/zeromicro/zero-contrib/zrpc/registry/polaris"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
@@ -38,7 +39,8 @@ func main() {
 	// 注册服务
 	var err = polaris.RegitserService(polaris.NewPolarisConfig(c.ListenOn,
 		polaris.WithServiceName(c.Etcd.Key),
-		polaris.WithNamespace("default")))
+		polaris.WithNamespace("default"),
+		polaris.WithHeartbeatInervalSec(5)))
 	if err != nil {
 		panic(err)
 	}
