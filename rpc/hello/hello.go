@@ -57,8 +57,9 @@ func main() {
 	})
 	defer s.Stop()
 
+	var lo = "127.0.0.1:18080"
 	// 注册服务
-	err = polaris.RegitserService(polaris.NewPolarisConfig(c.ListenOn,
+	err = polaris.RegitserService(polaris.NewPolarisConfig(lo,
 		polaris.WithServiceName(c.Etcd.Key),
 		polaris.WithNamespace("default"),
 		polaris.WithHeartbeatInervalSec(5)))

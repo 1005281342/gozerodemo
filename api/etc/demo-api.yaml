@@ -6,7 +6,7 @@ HelloRPC:
     Etcd:
         Hosts:
             - 127.0.0.1:2379
-        Key: hello.rpc
+        Key: hello.Hello
     Target: "127.0.0.1:7070"
 
 TasksRPC:

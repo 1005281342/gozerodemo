@@ -10,8 +10,8 @@ HelloRPC:
     Etcd:
         Hosts:
             - 127.0.0.1:2379
-        Key: hello.rpc
-    Target: "polaris://127.0.0.1:8091/hello.rpc?wait=14s"
+        Key: hello.Hello
+    Target: "polaris://127.0.0.1:8091/hello.Hello?wait=14s"
 #    Target: "127.0.0.1:7070"
 
 Telemetry:
