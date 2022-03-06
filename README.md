@@ -119,3 +119,42 @@ global:
         addresses:
             - 127.0.0.1:8091
 ```
+
+### helm安装北极星
+https://github.com/polarismesh/polaris/blob/main/deploy/helm/README-zh.md
+
+部署单机版：`helm install polarisstandalone . --set global.mode=standalone`
+```
+NAME: polarisstandalone
+LAST DEPLOYED: Sat Mar  5 00:07:54 2022
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+```
+
+卸载 `helm uninstall polarisstandalone`
+
+## 部署
+参考：https://go-zero.dev/cn/goctl-other.html
+
+### docker
+```shell script
+goctl docker -go demo.go
+
+docker build -t demo:v1 -f api/Dockerfile .
+
+docker run --rm -it -p 8888:8888 demo:v1
+```
+
+
+### k8s
+```shell script
+kubectl create namespace dev
+
+goctl kube deploy -name demo -namespace dev -image demo:v1 -o deploy/demo.yaml -port 8888
+
+kubectl apply -f deploy/demo.yaml
+```
+
+设置当目标镜像存在本地时就不去拉取 `imagePullPolicy: IfNotPresent`

@@ -10,7 +10,7 @@ require (
 	github.com/fullstorydev/grpchan v1.1.0
 	github.com/hibiken/asynq v0.20.0
 	github.com/prometheus/client_golang v1.11.0
-	github.com/rookie-ninja/rk-entry v1.0.10
+	github.com/rookie-ninja/rk-entry v1.0.11
 	github.com/rookie-ninja/rk-prom v1.1.4
 	github.com/rookie-ninja/rk-zero v0.0.0
 	github.com/tal-tech/go-zero v1.2.5
