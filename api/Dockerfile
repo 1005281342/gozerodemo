@@ -29,4 +29,4 @@ COPY --from=builder /app/boot.yaml /app/boot.yaml
 COPY --from=builder /app/demo /app/demo
 COPY --from=builder /app/etc /app/etc
 
-CMD ["./demo", "-f", "etc/demo-api.yaml"]
+#CMD ["./demo", "-f", "etc/demo-api.yaml"]
